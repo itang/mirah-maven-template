@@ -17,6 +17,11 @@ class Fib
   end
 end
 
-# ? 怎么获取命令行参数
-f = Fib.new
-f.bench 10
+class Main
+  def self.main(args: String[]): void
+    it = if args.length > 0; Integer.parseInt(args[0]); else 1; end
+    puts it
+    f = Fib.new
+    f.bench it
+  end
+end
